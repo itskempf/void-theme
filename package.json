@@ -1,9 +1,9 @@
 {
   "name": "void-theme",
   "displayName": "VOID",
-  "description": "Three dark VS Code themes for focused work, daylight coding, and high-contrast streaming.",
+  "description": "Three retro 90s-inspired VS Code themes for focused work, daytime coding, and high-contrast streaming.",
   "publisher": "void",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/itskempf/void-theme.git"

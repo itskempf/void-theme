@@ -1,12 +1,12 @@
 # VOID
 
-VOID is a VS Code theme extension built around one idea: let the editor breathe and let the code do the talking.
+VOID is a retro-leaning VS Code theme extension built around one idea: let the editor breathe and let the code do the talking.
 
 It ships with three variants:
 
-- `VOID:Deep` for late-night focus
-- `VOID:Ash` for warm daytime coding
-- `VOID:Pulse` for streaming and screen recording
+- `VOID:Deep` for late-night focus with a CRT glow
+- `VOID:Ash` for warm daytime coding with a soft 90s workstation feel
+- `VOID:Pulse` for streaming and screen recording with a polished retro bite
 
 ## Variants
 
@@ -18,7 +18,7 @@ It ships with three variants:
 
 Less is more. The UI chrome stays almost invisible, with sidebars, tabs, the status bar, and activity bar all kept close to the same tonal family as the background.
 
-Only the editor gets real color. Syntax is kept harmonious instead of loud, with a maximum of five accent hues across the whole theme.
+Only the editor gets real color. Syntax is kept harmonious instead of loud, with a maximum of five accent hues across the whole theme, all tuned to feel like a better version of a 90s workstation palette.
 
 The aim is a premium, low-noise surface:
 
@@ -55,5 +55,5 @@ The generated theme files live in `themes/` and are produced from one shared pal
 Install the generated VSIX directly into VS Code:
 
 ```bash
-code --install-extension void-theme-0.0.2.vsix
+code --install-extension void-theme-0.0.3.vsix
 ```
