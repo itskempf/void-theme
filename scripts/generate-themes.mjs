@@ -121,6 +121,14 @@ const pulseOverrides = {
 const ashPalette = { ...deepPalette, ...ashOverrides };
 const pulsePalette = { ...deepPalette, ...pulseOverrides };
 
+const alpha = (hex, opacity) => {
+  const normalized = hex.replace('#', '');
+  const r = Number.parseInt(normalized.slice(0, 2), 16);
+  const g = Number.parseInt(normalized.slice(2, 4), 16);
+  const b = Number.parseInt(normalized.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
+
 const getColors = (p) => ({
   'editor.background': p.editorBg,
   'editor.foreground': p.primaryText,
@@ -140,6 +148,29 @@ const getColors = (p) => ({
   'editorSuggestWidget.background': p.inputBg,
   'editorSuggestWidget.border': p.panelBorder,
   'editorSuggestWidget.selectedBackground': p.activeSelectionBg,
+  'editorSuggestWidget.selectedForeground': p.primaryText,
+  'editorHoverWidget.background': p.inputBg,
+  'editorHoverWidget.border': p.panelBorder,
+  'editorHoverWidget.foreground': p.primaryText,
+  'editorHoverWidget.statusBarBackground': p.sidebarBg,
+  'editorCodeLens.foreground': p.secondaryText,
+  'editorInlayHint.foreground': p.secondaryText,
+  'editorInlayHint.background': alpha(p.inputBg, 0.5),
+  'editorInlayHint.parameterForeground': p.primaryText,
+  'editorInlayHint.parameterBackground': alpha(p.inputBg, 0.5),
+  'editorInlayHint.typeForeground': p.types,
+  'editorInlayHint.typeBackground': alpha(p.inputBg, 0.5),
+  'editorStickyScroll.background': p.editorBg,
+  'editorStickyScroll.border': p.panelBorder,
+  'editorStickyScrollHover.background': p.hoverBg,
+  'editorStickyScrollGutter.background': p.editorBg,
+  'editorOverviewRuler.border': p.panelBorder,
+  'editorOverviewRuler.addedForeground': alpha(p.gitAdded, 0.65),
+  'editorOverviewRuler.modifiedForeground': alpha(p.gitModified, 0.65),
+  'editorOverviewRuler.deletedForeground': alpha(p.gitDeleted, 0.65),
+  'editorOverviewRuler.errorForeground': alpha(p.error, 0.65),
+  'editorOverviewRuler.warningForeground': alpha(p.warning, 0.65),
+  'editorOverviewRuler.infoForeground': alpha(p.info, 0.65),
 
   'sideBar.background': p.sidebarBg,
   'sideBar.foreground': p.secondaryText,
@@ -156,11 +187,14 @@ const getColors = (p) => ({
   'titleBar.activeBackground': p.titlebarBg,
   'titleBar.activeForeground': p.primaryText,
   'titleBar.inactiveBackground': p.titlebarBg,
+  'titleBar.border': p.panelBorder,
 
   'statusBar.background': p.statusbarBg,
   'statusBar.foreground': p.secondaryText,
   'statusBar.border': p.panelBorder,
   'statusBarItem.hoverBackground': p.hoverBg,
+  'statusBarItem.remoteBackground': p.statusbarBg,
+  'statusBarItem.remoteForeground': p.primaryText,
 
   'tab.activeBackground': p.editorBg,
   'tab.inactiveBackground': p.sidebarBg,
@@ -168,29 +202,51 @@ const getColors = (p) => ({
   'tab.inactiveForeground': p.secondaryText,
   'tab.border': p.panelBorder,
   'tab.activeBorderTop': p.focusBorder,
+  'tab.activeModifiedBorder': p.gitModified,
+  'tab.inactiveModifiedBorder': p.secondaryText,
 
   'panel.background': p.sidebarBg,
   'panel.border': p.panelBorder,
+  'panelTitle.activeForeground': p.primaryText,
+  'panelTitle.inactiveForeground': p.secondaryText,
+  'panelTitle.activeBorder': p.focusBorder,
+  'panelTitle.border': p.panelBorder,
 
   'input.background': p.inputBg,
   'input.foreground': p.primaryText,
   'input.border': p.panelBorder,
   'input.placeholderForeground': p.disabledText,
+  'inputOption.activeBackground': p.activeSelectionBg,
+  'inputOption.activeBorder': p.focusBorder,
+  'inputOption.activeForeground': p.primaryText,
 
   'focusBorder': p.focusBorder,
   'list.hoverBackground': p.hoverBg,
   'list.activeSelectionBackground': p.activeSelectionBg,
   'list.activeSelectionForeground': p.primaryText,
   'list.inactiveSelectionBackground': p.hoverBg,
+  'list.inactiveSelectionForeground': p.primaryText,
+  'list.focusBackground': p.activeSelectionBg,
+  'list.focusForeground': p.primaryText,
+  'list.highlightForeground': p.functions,
 
   'scrollbarSlider.background': p.hoverBg,
   'scrollbarSlider.hoverBackground': p.activeSelectionBg,
+  'scrollbarSlider.activeBackground': alpha(p.focusBorder, 0.7),
 
+  'breadcrumb.background': p.editorBg,
   'breadcrumb.foreground': p.secondaryText,
   'breadcrumb.activeSelectionForeground': p.primaryText,
+  'breadcrumb.focusForeground': p.primaryText,
+  'breadcrumbPicker.background': p.inputBg,
+  'breadcrumbPicker.border': p.panelBorder,
 
   'editorGroupHeader.tabsBackground': p.sidebarBg,
   'editorGroup.border': p.panelBorder,
+  'editorGroup.emptyBackground': p.editorBg,
+  'editorGroup.dropIntoPromptBackground': p.inputBg,
+  'editorGroup.dropIntoPromptBorder': p.panelBorder,
+  'editorGroup.dropIntoPromptForeground': p.primaryText,
 
   'terminal.background': p.editorBg,
   'terminal.foreground': p.primaryText,
@@ -211,17 +267,44 @@ const getColors = (p) => ({
   'terminal.ansiBrightCyan': p.tagAttributes,
   'terminal.ansiBrightWhite': p.primaryText,
 
+  'diffEditor.border': p.panelBorder,
+  'diffEditor.insertedTextBackground': alpha(p.gitAdded, 0.12),
+  'diffEditor.removedTextBackground': alpha(p.gitDeleted, 0.12),
+  'diffEditor.insertedTextBorder': alpha(p.gitAdded, 0.2),
+  'diffEditor.removedTextBorder': alpha(p.gitDeleted, 0.2),
+  'diffEditor.insertedLineBackground': alpha(p.gitAdded, 0.06),
+  'diffEditor.removedLineBackground': alpha(p.gitDeleted, 0.06),
+  'diffEditorGutter.insertedLineBackground': alpha(p.gitAdded, 0.06),
+  'diffEditorGutter.removedLineBackground': alpha(p.gitDeleted, 0.06),
+  'diffEditorOverview.insertedForeground': alpha(p.gitAdded, 0.6),
+  'diffEditorOverview.removedForeground': alpha(p.gitDeleted, 0.6),
+
   'gitDecoration.addedResourceForeground': p.gitAdded,
   'gitDecoration.modifiedResourceForeground': p.gitModified,
   'gitDecoration.deletedResourceForeground': p.gitDeleted,
   'gitDecoration.untrackedResourceForeground': p.gitAdded,
+  'gitDecoration.ignoredResourceForeground': p.disabledText,
+  'gitDecoration.conflictingResourceForeground': p.warning,
+  'gitDecoration.submoduleResourceForeground': p.types,
+  'gitDecoration.stageModifiedResourceForeground': alpha(p.gitModified, 0.85),
+  'gitDecoration.stageDeletedResourceForeground': alpha(p.gitDeleted, 0.85),
+  'gitDecoration.stageAddedResourceForeground': alpha(p.gitAdded, 0.85),
 
   'editorError.foreground': p.error,
   'editorWarning.foreground': p.warning,
   'editorInfo.foreground': p.info,
+  'editorError.border': alpha(p.error, 0.35),
+  'editorWarning.border': alpha(p.warning, 0.35),
+  'editorInfo.border': alpha(p.info, 0.35),
+  'editorError.background': alpha(p.error, 0.08),
+  'editorWarning.background': alpha(p.warning, 0.08),
+  'editorInfo.background': alpha(p.info, 0.08),
+  'editorUnnecessaryCode.opacity': '#ffffff66',
 
   'notificationCenterHeader.background': p.inputBg,
   'notifications.background': p.sidebarBg,
+  'notifications.border': p.panelBorder,
+  'notificationCenterHeader.foreground': p.primaryText,
 
   'badge.background': p.focusBorder,
   'badge.foreground': p.primaryText,
@@ -230,12 +313,44 @@ const getColors = (p) => ({
 
   'pickerGroup.foreground': p.keywords,
   'quickInput.background': p.inputBg,
+  'quickInput.foreground': p.primaryText,
+  'quickInputList.focusBackground': p.activeSelectionBg,
 
   'chat.requestBackground': p.inputBg,
   'chat.slashCommandBackground': p.activeSelectionBg,
+  'chat.requestBubbleBackground': p.sidebarBg,
+  'chat.requestBubbleHoverBackground': p.hoverBg,
+  'chat.requestCodeBackground': p.editorBg,
+  'chat.requestCodeBorder': p.panelBorder,
+  'chat.avatarBackground': p.sidebarBg,
+  'chat.avatarForeground': p.primaryText,
+  'chat.inputEditorBackground': p.editorBg,
+  'chat.checkpointSeparator': p.panelBorder,
+  'chat.editedFileForeground': p.secondaryText,
+  'chat.linesAddedForeground': p.gitAdded,
+  'chat.linesRemovedForeground': p.gitDeleted,
+  'chat.thinkingShimmer': alpha(p.focusBorder, 0.25),
 
   'inlineChat.background': p.inputBg,
-  'inlineChatInput.background': p.editorBg
+  'inlineChat.foreground': p.primaryText,
+  'inlineChat.border': p.panelBorder,
+  'inlineChatInput.background': p.editorBg,
+  'inlineChatInput.border': p.panelBorder,
+  'inlineChatInput.focusBorder': p.focusBorder,
+  'inlineChatInput.placeholderForeground': p.disabledText,
+  'inlineChat.shadow': alpha(p.editorBg, 0.4),
+  'welcomePage.background': p.editorBg,
+  'welcomePage.tileBackground': p.inputBg,
+  'welcomePage.tileHoverBackground': p.hoverBg,
+  'welcomePage.tileBorder': p.panelBorder,
+  'welcomePage.progress.background': alpha(p.focusBorder, 0.35),
+  'welcomePage.progress.foreground': p.focusBorder,
+  'settings.headerForeground': p.primaryText,
+  'settings.focusedRowBackground': p.activeSelectionBg,
+  'settings.focusedRowBorder': p.focusBorder,
+  'settings.rowHoverBackground': p.hoverBg,
+  'settings.modifiedItemIndicator': p.focusBorder,
+  'settings.settingsHeaderHoverForeground': p.focusBorder
 });
 
 const getTextMateTokens = (p) => ([
@@ -418,8 +533,38 @@ const getTextMateTokens = (p) => ([
 const buildTheme = (name, p) => ({
   name,
   type: 'dark',
+  semanticHighlighting: true,
   colors: getColors(p),
-  tokenColors: getTextMateTokens(p)
+  tokenColors: getTextMateTokens(p),
+  semanticTokenColors: {
+    comment: p.comments,
+    keyword: p.keywords,
+    string: p.strings,
+    number: p.numbers,
+    regexp: p.regex,
+    operator: p.operators,
+    type: p.types,
+    class: p.types,
+    interface: p.types,
+    struct: p.types,
+    enum: p.types,
+    typeParameter: p.types,
+    parameter: p.variables,
+    variable: p.variables,
+    property: p.propertyKeys,
+    enumMember: p.numbers,
+    function: p.functions,
+    method: p.functions,
+    macro: p.keywords,
+    label: p.keywords,
+    event: p.keywords,
+    namespace: p.types,
+    '*.declaration': { bold: true },
+    '*.readonly': { foreground: p.types },
+    '*.static': { foreground: p.keywords },
+    '*.defaultLibrary': { foreground: p.functions },
+    '*.deprecated': { foreground: p.disabledText, strikethrough: true }
+  }
 });
 
 const themes = [
