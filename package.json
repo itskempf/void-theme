@@ -1,0 +1,46 @@
+{
+  "name": "void-theme",
+  "displayName": "VOID",
+  "description": "Three dark VS Code themes for focused work, daylight coding, and high-contrast streaming.",
+  "publisher": "void",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itskempf/void-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itskempf/void-theme/issues"
+  },
+  "homepage": "https://github.com/itskempf/void-theme#readme",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "activationEvents": [],
+  "contributes": {
+    "themes": [
+      {
+        "label": "VOID:Deep",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-deep-color-theme.json"
+      },
+      {
+        "label": "VOID:Ash",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-ash-color-theme.json"
+      },
+      {
+        "label": "VOID:Pulse",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-pulse-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node ./scripts/generate-themes.mjs",
+    "package": "npm run build"
+  },
+  "license": "MIT"
+}

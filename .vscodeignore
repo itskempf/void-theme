@@ -1,0 +1,9 @@
+.gitignore
+.vscode/
+node_modules/
+scripts/
+*.mjs
+*.ts
+.DS_Store
+Thumbs.db
+
