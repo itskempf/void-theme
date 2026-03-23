@@ -1,9 +1,9 @@
 {
   "name": "void-theme",
   "displayName": "VOID",
-  "description": "Three retro 90s-inspired VS Code themes for focused work, daytime coding, and high-contrast streaming.",
+  "description": "Four retro 90s-inspired VS Code themes for focused work, daytime coding, high-contrast streaming, and an ideal all-rounder.",
   "publisher": "void",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/itskempf/void-theme.git"
@@ -36,6 +36,11 @@
         "label": "VOID:Pulse",
         "uiTheme": "vs-dark",
         "path": "./themes/void-pulse-color-theme.json"
+      },
+      {
+        "label": "VOID:Ideal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-ideal-color-theme.json"
       }
     ]
   },

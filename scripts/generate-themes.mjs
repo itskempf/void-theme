@@ -149,8 +149,59 @@ const pulseOverrides = {
   gitDeleted: '#ff93a3'
 };
 
+const idealOverrides = {
+  editorBg: '#0d1118',
+  sidebarBg: '#0b0f15',
+  titlebarBg: '#090c12',
+  statusbarBg: '#090b12',
+  inputBg: '#141a24',
+  hoverBg: '#1b2333',
+  activeSelectionBg: '#273148',
+  highlightLine: '#101624',
+
+  panelBorder: '#233045',
+  focusBorder: '#8fded6',
+  separator: '#18202e',
+
+  primaryText: '#f1efe7',
+  secondaryText: '#7d8392',
+  disabledText: '#4a5163',
+  comments: '#56607a',
+
+  keywords: '#d59aff',
+  functions: '#70e3eb',
+  strings: '#9be6a4',
+  numbers: '#ffc98b',
+  types: '#e0c0ff',
+  variables: '#f1efe7',
+  operators: '#818998',
+  punctuation: '#596276',
+  propertyKeys: '#9fd7ff',
+  tags: '#d59aff',
+  tagAttributes: '#9be6a4',
+  regex: '#ffd98b',
+  escapeChars: '#e0c0ff',
+
+  cursor: '#d59aff',
+  selectionBg: '#303a54',
+  wordHighlight: '#232b3f',
+  findMatchBg: '#4b3f77',
+  findMatchCurrent: '#715fe4',
+  indentGuides: '#22293c',
+  indentGuidesActive: '#5f54c4',
+  bracketMatchBg: '#303a54',
+  bracketMatchBorder: '#d59aff60',
+  error: '#ff91a4',
+  warning: '#ffc98b',
+  info: '#70e3eb',
+  gitAdded: '#9be6a4',
+  gitModified: '#d59aff',
+  gitDeleted: '#ff91a4'
+};
+
 const ashPalette = { ...deepPalette, ...ashOverrides };
 const pulsePalette = { ...deepPalette, ...pulseOverrides };
+const idealPalette = { ...deepPalette, ...idealOverrides };
 
 const alpha = (hex, opacity) => {
   const normalized = hex.replace('#', '');
@@ -601,7 +652,8 @@ const buildTheme = (name, p) => ({
 const themes = [
   ['VOID:Deep', deepPalette, 'void-deep-color-theme.json'],
   ['VOID:Ash', ashPalette, 'void-ash-color-theme.json'],
-  ['VOID:Pulse', pulsePalette, 'void-pulse-color-theme.json']
+  ['VOID:Pulse', pulsePalette, 'void-pulse-color-theme.json'],
+  ['VOID:Ideal', idealPalette, 'void-ideal-color-theme.json']
 ];
 
 for (const [name, palette, filename] of themes) {
