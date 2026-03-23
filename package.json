@@ -1,9 +1,9 @@
 {
   "name": "void-theme",
   "displayName": "VOID",
-  "description": "Four retro 90s-inspired VS Code themes for focused work, daytime coding, high-contrast streaming, and an ideal all-rounder.",
+  "description": "Seven handcrafted VS Code themes spanning CRT noir, paper-warm ash, arcade blacklight, smoked jade, ember lacquer, broadcast pulse, and an ideal all-rounder.",
   "publisher": "void",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/itskempf/void-theme.git"
@@ -41,6 +41,21 @@
         "label": "VOID:Ideal",
         "uiTheme": "vs-dark",
         "path": "./themes/void-ideal-color-theme.json"
+      },
+      {
+        "label": "VOID:Arcade",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-arcade-color-theme.json"
+      },
+      {
+        "label": "VOID:Jade",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-jade-color-theme.json"
+      },
+      {
+        "label": "VOID:Ember",
+        "uiTheme": "vs-dark",
+        "path": "./themes/void-ember-color-theme.json"
       }
     ]
   },
