@@ -53,12 +53,12 @@ const deepPalette = {
   indentGuidesActive: '#3a3858',
   bracketMatchBg: '#2a2840',
   bracketMatchBorder: '#9d8cff60',
-  error: '#ff6b7a',
+  error: '#e8828d',
   warning: '#e8a87c',
   info: '#60aeff',
   gitAdded: '#78c9a0',
   gitModified: '#9d8cff',
-  gitDeleted: '#ff6b7a'
+  gitDeleted: '#e8828d'
 };
 
 const ashOverrides = {
@@ -96,11 +96,11 @@ const ashOverrides = {
 
   cursor: '#c4956a',
   selectionBg: '#32302a',
-  error: '#d46b6b',
+  error: '#c97a67',
   warning: '#c4956a',
   gitAdded: '#8abf88',
   gitModified: '#c4956a',
-  gitDeleted: '#d46b6b'
+  gitDeleted: '#c97a67'
 };
 
 const pulseOverrides = {
@@ -115,7 +115,9 @@ const pulseOverrides = {
   cursor: '#b8a4ff',
   selectionBg: '#2e2c50',
   findMatchCurrent: '#6658cc',
-  indentGuidesActive: '#4a4870'
+  indentGuidesActive: '#4a4870',
+  error: '#ff8695',
+  gitDeleted: '#ff8695'
 };
 
 const ashPalette = { ...deepPalette, ...ashOverrides };
