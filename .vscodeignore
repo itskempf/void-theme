@@ -6,4 +6,4 @@ scripts/
 *.ts
 .DS_Store
 Thumbs.db
-
+*.vsix

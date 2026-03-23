@@ -20,6 +20,13 @@ Less is more. The UI chrome stays almost invisible, with sidebars, tabs, the sta
 
 Only the editor gets real color. Syntax is kept harmonious instead of loud, with a maximum of five accent hues across the whole theme.
 
+The aim is a premium, low-noise surface:
+
+- crisp but restrained bracket and scope separation
+- soft breadcrumb and sticky-scroll treatment
+- subtle inlay hints and code lens text
+- gentler diff, git, and settings states that feel integrated rather than bolted on
+
 AI surfaces are treated as first-class but quiet:
 
 - chat and inline assistant panels are offset just enough from the editor to feel distinct
@@ -42,3 +49,11 @@ npm run build
 ```
 
 The generated theme files live in `themes/` and are produced from one shared palette source in `scripts/generate-themes.mjs`.
+
+## Install
+
+Install the generated VSIX directly into VS Code:
+
+```bash
+code --install-extension void-theme-0.0.2.vsix
+```

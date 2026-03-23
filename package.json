@@ -3,7 +3,7 @@
   "displayName": "VOID",
   "description": "Three dark VS Code themes for focused work, daylight coding, and high-contrast streaming.",
   "publisher": "void",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/itskempf/void-theme.git"
@@ -19,6 +19,7 @@
     "Themes"
   ],
   "activationEvents": [],
+  "main": "./extension.js",
   "contributes": {
     "themes": [
       {
