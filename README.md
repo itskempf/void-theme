@@ -35,11 +35,9 @@ AI surfaces are treated as first-class but quiet:
 
 ## Screenshots
 
-Replace these placeholders with real preview images once you have the extension open in VS Code.
-
-![VOID:Deep](./images/void-deep.png)
-![VOID:Ash](./images/void-ash.png)
-![VOID:Pulse](./images/void-pulse.png)
+![VOID:Deep](./images/void-deep.svg)
+![VOID:Ash](./images/void-ash.svg)
+![VOID:Pulse](./images/void-pulse.svg)
 
 ## Build
 

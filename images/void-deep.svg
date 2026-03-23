@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+    <!-- Window Chrome -->
+    <rect x="0" y="0" width="800" height="400" rx="8" fill="#090909" stroke="#1c1c22" stroke-width="2"/>
+    <circle cx="24" cy="20" r="6" fill="#ff6b7a"/>
+    <circle cx="44" cy="20" r="6" fill="#e8a87c"/>
+    <circle cx="64" cy="20" r="6" fill="#60aeff"/>
+    <text x="400" y="24" fill="#d4d2e0" font-family="sans-serif" font-size="14" text-anchor="middle" font-weight="500">VOID:Deep</text>
+
+    <!-- Editor Background -->
+    <rect x="0" y="40" width="800" height="360" fill="#0e0e11"/>
+
+    <!-- Code Editor -->
+    <g font-family="monospace" font-size="16" transform="translate(30, 80)">
+      <!-- Line Numbers -->
+      <g fill="#3f3e50" opacity="0.5">
+        <text x="0" y="0">1</text>
+        <text x="0" y="24">2</text>
+        <text x="0" y="48">3</text>
+        <text x="0" y="72">4</text>
+        <text x="0" y="96">5</text>
+        <text x="0" y="120">6</text>
+        <text x="0" y="144">7</text>
+        <text x="0" y="168">8</text>
+        <text x="0" y="192">9</text>
+        <text x="0" y="216">10</text>
+        <text x="0" y="240">11</text>
+        <text x="0" y="264">12</text>
+        <text x="0" y="288">13</text>
+      </g>
+
+      <!-- Code Content -->
+      <g transform="translate(40, 0)">
+        <!-- Line 1 -->
+        <text x="0" y="0">
+          <tspan fill="#9d8cff">function</tspan> <tspan fill="#60aeff">calculateFocus</tspan><tspan fill="#d4d2e0">(</tspan><tspan fill="#d4d2e0">environment</tspan><tspan fill="#d4d2e0">) {</tspan>
+        </text>
+        <!-- Line 2 -->
+        <text x="20" y="24" fill="#3a3848">// Minimize noise, maximize clarity</text>
+        <!-- Line 3 -->
+        <text x="20" y="48">
+          <tspan fill="#9d8cff">const</tspan> <tspan fill="#d4d2e0">clarity</tspan> <tspan fill="#7a7890">=</tspan> <tspan fill="#d4d2e0">environment.noiseLevel</tspan> <tspan fill="#7a7890">&lt;</tspan> <tspan fill="#e8a87c">10</tspan>
+        </text>
+        <!-- Line 4 -->
+        <text x="40" y="72">
+          <tspan fill="#7a7890">?</tspan> <tspan fill="#78c9a0">'optimal'</tspan>
+        </text>
+        <!-- Line 5 -->
+        <text x="40" y="96">
+          <tspan fill="#7a7890">:</tspan> <tspan fill="#78c9a0">'suboptimal'</tspan><tspan fill="#d4d2e0">;</tspan>
+        </text>
+        <!-- Line 6 -->
+        <!-- Empty Line -->
+        <!-- Line 7 -->
+        <text x="20" y="144">
+          <tspan fill="#9d8cff">if</tspan> <tspan fill="#d4d2e0">(clarity</tspan> <tspan fill="#7a7890">===</tspan> <tspan fill="#78c9a0">'optimal'</tspan><tspan fill="#d4d2e0">) {</tspan>
+        </text>
+        <!-- Line 8 -->
+        <text x="40" y="168">
+          <tspan fill="#9d8cff">return</tspan> <tspan fill="#d4d2e0">{</tspan>
+        </text>
+        <!-- Line 9 -->
+        <text x="60" y="192">
+          <tspan fill="#8bbcf0">flowState</tspan><tspan fill="#7a7890">:</tspan> <tspan fill="#9d8cff">true</tspan><tspan fill="#d4d2e0">,</tspan>
+        </text>
+        <!-- Line 10 -->
+        <text x="60" y="216">
+          <tspan fill="#8bbcf0">distractions</tspan><tspan fill="#7a7890">:</tspan> <tspan fill="#9d8cff">null</tspan>
+        </text>
+        <!-- Line 11 -->
+        <text x="40" y="240" fill="#d4d2e0">};</text>
+        <!-- Line 12 -->
+        <text x="20" y="264" fill="#d4d2e0">}</text>
+        <!-- Line 13 -->
+        <text x="20" y="288">
+          <tspan fill="#9d8cff">return</tspan> <tspan fill="#9d8cff">false</tspan><tspan fill="#d4d2e0">;</tspan>
+        </text>
+        <!-- Line 14 -->
+        <text x="0" y="312" fill="#d4d2e0">}</text>
+      </g>
+    </g>
+  </svg>
